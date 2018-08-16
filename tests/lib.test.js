@@ -18,5 +18,21 @@ describe('absolute', ()=>{
     });
 });
 
+describe('greet', () => {
+    it('should return the greeting message', () =>{
+        const result = lib.greet('Prash');
+        expect(result).toMatch(/Prash/);
+        expect(result).toContain('Prash');
+        })
+});
+
+describe('getCurrencies', () => {
+    it('should return supported currencies', ()=>{
+        const result = lib.getCurrencies();
+
+        
+    })
+});
+
 
 
