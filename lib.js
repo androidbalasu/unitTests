@@ -17,9 +17,9 @@ module.exports.getCurrencies = function() {
 }
 
 // // Testing objects 
-// module.exports.getProduct = function(productId) { 
-//   return { id: productId, price: 10 };
-// }
+module.exports.getProduct = function(productId) { 
+  return { id: productId, price: 10, quantity: 2 };
+}
 
 // // Testing exceptions 
 // module.exports.registerUser = function(username) { 
