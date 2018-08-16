@@ -48,3 +48,8 @@ describe('getProduct', ()=>{
     })
 });
 
+describe('register', ()=> {
+    it('should throw if username is falsy', () => {
+        expect(()=>{lib.registerUser(null);}).toThrow();
+    })
+});
