@@ -1,4 +1,5 @@
 const lib = require('../lib');
+const exercise1 = require('../exercise1');
 
 //Use describe to group a bunch of related tests.
 describe('absolute', ()=>{
@@ -62,4 +63,37 @@ describe('registerUser', ()=> {
         expect(result).toMatchObject({username: 'Prash'});
         expect(result.id).toBeGreaterThan(0);
     });
+});
+
+
+describe('TestFizzBuzz', () =>{
+    //Throw exception if input is not a number\falsy
+    it('should throw if input number is NaN\\null\\undefined', ()=>{
+        const args = [null, undefined, '', {},false];
+        args.forEach( a=> {
+            expect(()=>{exercise1.fizzBuzz(a);}).toThrow();
+        });
+    })
+
+    //
+    it ('should return \'Fizzbuzz\' if number is divisible by 3 and 5', () => {
+        const result = exercise1.fizzBuzz(15);
+        expect(result).toBe('FizzBuzz');
+    })
+
+    it ('should return \'Fizz\' if number is divisible only by 3', () => {
+        const result = exercise1.fizzBuzz(3);
+        expect(result).toBe('Fizz');
+    })
+
+    it ('should return \'Buzz\' if number is divisible only by 5', () => {
+        const result = exercise1.fizzBuzz(5);
+        expect(result).toBe('Buzz');
+    })
+
+    it ('should return input if number is not divisible by 3 or 5', () => {
+        const result = exercise1.fizzBuzz(1);
+        expect(result).toBe(1);
+    })
+
 });
